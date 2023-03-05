@@ -2,18 +2,16 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Post } from "./Post";
 
-function SubredditList(props) {
+const SubredditList = ({ subreddit }) => {
   const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
-      setLoading(true);
-      setError(null);
       try {
         const response = await axios.get(
-          `http://localhost:3000/r/${props.subreddit}`
+          `http://localhost:3000/r/${subreddit}`
         );
         setData(response.data);
       } catch (error) {
@@ -23,19 +21,11 @@ function SubredditList(props) {
       }
     };
     fetchData();
-  }, [props.subreddit]);
+  }, [subreddit]);
 
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
-  if (error) {
-    return <div>Error: {error.message}</div>;
-  }
-
-  if (data.length === 0) {
-    return <div>No results found.</div>;
-  }
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error.message}</div>;
+  if (!data.length) return <div>No results found.</div>;
 
   return (
     <div>
@@ -44,6 +34,6 @@ function SubredditList(props) {
       ))}
     </div>
   );
-}
+};
 
 export default SubredditList;
