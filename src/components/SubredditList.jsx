@@ -8,19 +8,21 @@ function SubredditList(props) {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    setLoading(true);
-    setError(null);
-
-    axios
-      .get(`http://localhost:3000/r/${props.subreddit}`)
-      .then((response) => {
+    const fetchData = async () => {
+      setLoading(true);
+      setError(null);
+      try {
+        const response = await axios.get(
+          `http://localhost:3000/r/${props.subreddit}`
+        );
         setData(response.data);
-        setLoading(false);
-      })
-      .catch((error) => {
+      } catch (error) {
         setError(error);
+      } finally {
         setLoading(false);
-      });
+      }
+    };
+    fetchData();
   }, [props.subreddit]);
 
   if (loading) {
