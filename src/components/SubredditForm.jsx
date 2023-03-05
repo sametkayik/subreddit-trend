@@ -25,7 +25,7 @@ function SubredditForm(props) {
           onChange={handleSubredditChange}
         />
       </label>
-      <button type="button" onClick={handleSubmit}>
+      <button type="submit" onClick={handleSubmit}>
         Search
       </button>
     </form>
