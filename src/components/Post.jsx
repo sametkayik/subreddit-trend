@@ -5,7 +5,7 @@ export const Post = ({ item }) => {
   return (
     <div className="post" key={item.id}>
       <a className="post-link" href={item.url}>
-        🚀 {item.title}
+        {item.title}
       </a>
       <div className="post-details">
         <p className="post-upvotes">{item.ups} upvotes</p>

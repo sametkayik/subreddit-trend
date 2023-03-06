@@ -24,11 +24,11 @@ h1 {
 }
 
 .post {
+  width: 50%;
   margin: 10px;
   /* border: 1px solid #3e4446;
-  border-radius: 5px; */
-
-  /* white-space: nowrap;
+  border-radius: 5px;
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis; */
   display: flex;
@@ -41,6 +41,11 @@ h1 {
   color: #d7dadc;
   margin: 0px;
   font-weight: bold;
+}
+
+.post-link:before {
+  content: "🚀";
+  margin-right: 5px;
 }
 
 .post-details {
