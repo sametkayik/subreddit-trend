@@ -1,7 +1,7 @@
 body {
   font-family: "Roboto", sans-serif;
-  background-color: #fff;
-  color: #000;
+  background-color: #1a1a1b;
+  color: #d7dadc;
 }
 
 form {
@@ -38,7 +38,7 @@ h1 {
 
 .post-link {
   text-decoration: none;
-  color: #000;
+  color: #d7dadc;
   margin: 0px;
   font-weight: bold;
 }
