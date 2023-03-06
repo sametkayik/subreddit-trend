@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Post } from "./Post";
+import "../App.css";
 
 const SubredditList = ({ subreddit }) => {
   const [data, setData] = useState([]);
@@ -28,7 +29,7 @@ const SubredditList = ({ subreddit }) => {
   if (!data.length) return <div>No results found.</div>;
 
   return (
-    <div>
+    <div className="container">
       {data.map((item) => (
         <Post key={item.id} item={item} />
       ))}
