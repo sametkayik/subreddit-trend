@@ -19,13 +19,14 @@ function SubredditForm(props) {
       <label>
         Subreddit:
         <input
+          id="subreddit-search"
           type="text"
           name="subreddit"
           value={subreddit}
           onChange={handleSubredditChange}
         />
       </label>
-      <button type="submit" onClick={handleSubmit}>
+      <button id="subreddit-submit" type="submit" onClick={handleSubmit}>
         Search
       </button>
     </form>

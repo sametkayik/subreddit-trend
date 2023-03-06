@@ -30,6 +30,7 @@ const SubredditList = ({ subreddit }) => {
 
   return (
     <div className="container">
+      <p className="subreddit-name">r/{subreddit}</p>
       {data.map((item) => (
         <Post key={item.id} item={item} />
       ))}
