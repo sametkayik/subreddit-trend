@@ -16,7 +16,7 @@ function Home() {
       {search ? (
         <div style={{ display: "flex", margin: "0" }}>
           <h1>Subreddit Trend </h1>
-          <h1 style={{ marginLeft: "50px" }}>r/{subreddit}</h1>
+          <h1 className="subreddit-name">r/{subreddit}</h1>
         </div>
       ) : (
         <h1>Subreddit Trend</h1>
