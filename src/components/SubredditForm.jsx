@@ -22,6 +22,7 @@ function SubredditForm(props) {
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
+          margin: "0 10px",
         }}
       >
         <div>
@@ -49,7 +50,7 @@ function SubredditForm(props) {
           </Link>
         </div>
       </form>
-      <div className="categories">
+      <div className="categories" style={{ margin: "0 10px" }}>
         <button onClick={() => props.onSubredditChange("learnprogramming")}>
           LearnProgramming
         </button>

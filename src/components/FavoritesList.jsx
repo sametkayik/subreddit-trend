@@ -19,22 +19,24 @@ export const FavoritesList = () => {
 
   return (
     <div className="favorites">
-      <span>Styling... unique!! :)</span>
-      <h1 className="title" style={{ marginLeft: "0" }}>
-        {" "}
-        Subreddit Trend
-      </h1>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-        }}
-      >
-        <h2>My Favorites</h2>
-        <Link to="/" style={{ textDecoration: "none", color: "#d7dadc" }}>
-          <h2>Home Page</h2>
-        </Link>
+      <div style={{ margin: "0 10px" }}>
+        <span>Styling... unique!! :)</span>
+        <h1 className="title" style={{ marginLeft: "0" }}>
+          {" "}
+          Subreddit Trend
+        </h1>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}
+        >
+          <h2>My Favorites</h2>
+          <Link to="/" style={{ textDecoration: "none", color: "#d7dadc" }}>
+            <h2>Home Page</h2>
+          </Link>
+        </div>
       </div>
       {favorites.map((item, index) => (
         <Post key={index} item={item} />
