@@ -13,13 +13,14 @@ function Home() {
 
   return (
     <div>
+      <span style={{ marginLeft: "10px" }}>Styling... unique!! :)</span>
       {search ? (
-        <div style={{ display: "flex", margin: "0", justifyContent: "center" }}>
+        <div style={{ display: "flex" }}>
           <h1>Subreddit Trend </h1>
           <h1 className="subreddit-name">r/{subreddit}</h1>
         </div>
       ) : (
-        <h1 style={{ textAlign: "center" }}>Subreddit Trend</h1>
+        <h1>Subreddit Trend</h1>
       )}
       <SubredditForm
         subreddit={subreddit}

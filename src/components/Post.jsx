@@ -3,18 +3,41 @@ import "../App.css";
 
 export const Post = ({ item }) => {
   const [showText, setShowText] = React.useState(false);
+  const [isFavorited, setIsFavorited] = React.useState(
+    localStorage.getItem("favorites")
+      ? JSON.parse(localStorage.getItem("favorites")).some(
+          (favorite) => favorite.id === item.id
+        )
+      : false
+  );
 
   const handleClick = () => {
     setShowText(!showText);
   };
 
+  const handleFavoriteClick = () => {
+    const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+    if (isFavorited) {
+      localStorage.setItem(
+        "favorites",
+        JSON.stringify(favorites.filter((favorite) => favorite.id !== item.id))
+      );
+      setIsFavorited(false);
+    } else {
+      favorites.push(item);
+      localStorage.setItem("favorites", JSON.stringify(favorites));
+      setIsFavorited(true);
+    }
+  };
+
   return (
-    <div class="post-card">
-      <div class="post-header">
+    <div className="post-card">
+      <div className="post-header">
         <a href={item.url} target="_blank" rel="noopener noreferrer">
-          <h2 class="post-title">{item.title}</h2>
+          <h2 className="post-title">{item.title}</h2>
         </a>
-        <p class="post-author">
+        <p className="post-author">
           Posted by <br />
           <a
             href={item.author_profile}
@@ -36,15 +59,26 @@ export const Post = ({ item }) => {
           </button>
         )
       )}
-      <div class="post-body">{showText && <p>{item.text}</p>}</div>
-      <div class="post-footer">
-        <div class="post-stats">
-          <p class="post-upvotes">
-            <i class="fas fa-arrow-up"></i> {item.ups} upvotes
+      <div className="post-body">{showText && <p>{item.text}</p>}</div>
+      <div className="post-footer">
+        <div className="post-stats">
+          <p className="post-upvotes">
+            <i className="fas fa-arrow-up"></i> {item.ups} upvotes
           </p>
-          <p class="post-comments">
-            <i class="fas fa-comment"></i> {item.num_comments} comments
+          <p className="post-comments">
+            <i className="fas fa-comment"></i> {item.num_comments} comments
           </p>
+          <button
+            onClick={handleFavoriteClick}
+            style={{
+              background: "transparent",
+              border: "none",
+              color: "#d7dadc",
+              cursor: "pointer",
+            }}
+          >
+            {isFavorited ? "Remove from favorites" : "Add to favorites"}
+          </button>
         </div>
       </div>
     </div>

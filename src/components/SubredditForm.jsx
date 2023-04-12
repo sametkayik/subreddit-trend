@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 function SubredditForm(props) {
   const [subreddit, setSubreddit] = useState("");
@@ -16,20 +17,37 @@ function SubredditForm(props) {
 
   return (
     <>
-      <form>
-        <label>
-          Subreddit:{" "}
-          <input
-            id="subreddit-search"
-            type="text"
-            name="subreddit"
-            value={subreddit}
-            onChange={handleSubredditChange}
-          />
-        </label>
-        <button id="subreddit-submit" type="submit" onClick={handleSubmit}>
-          Search
-        </button>
+      <form
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+        }}
+      >
+        <div>
+          <label>
+            Subreddit:{" "}
+            <input
+              id="subreddit-search"
+              type="text"
+              name="subreddit"
+              value={subreddit}
+              onChange={handleSubredditChange}
+            />
+          </label>
+          <button id="subreddit-submit" type="submit" onClick={handleSubmit}>
+            Search
+          </button>
+        </div>
+
+        <div>
+          <Link
+            to="/favorites"
+            style={{ textDecoration: "none", color: "#d7dadc" }}
+          >
+            <h2>Favorites</h2>
+          </Link>
+        </div>
       </form>
       <div className="categories">
         <button onClick={() => props.onSubredditChange("learnprogramming")}>
