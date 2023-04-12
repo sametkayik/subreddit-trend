@@ -13,10 +13,12 @@ const getSubreddit = async (subreddit, limit = 10) => {
       subreddit_name_prefixed: post.data.subreddit_name_prefixed,
       title: post.data.title,
       author: post.data.author,
+      author_profile: baseUrl + "/user/" + post.data.author,
       ups: post.data.ups,
       num_comments: post.data.num_comments,
       url: baseUrl + post.data.permalink,
       text: post.data.selftext,
+      posted_date: post.data.created_utc,
     }));
     return simplifiedPosts;
   } catch (error) {

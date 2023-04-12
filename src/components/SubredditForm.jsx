@@ -18,7 +18,7 @@ function SubredditForm(props) {
     <>
       <form>
         <label>
-          Subreddit:
+          Subreddit:{" "}
           <input
             id="subreddit-search"
             type="text"
@@ -49,9 +49,6 @@ function SubredditForm(props) {
         </button>
         <button onClick={() => props.onSubredditChange("webdev")}>
           WebDev
-        </button>
-        <button onClick={() => props.onSubredditChange("web_design")}>
-          WebDesign
         </button>
       </div>
     </>

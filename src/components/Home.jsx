@@ -14,7 +14,7 @@ function Home() {
   return (
     <div>
       {search ? (
-        <div style={{ display: "flex", margin: "0" }}>
+        <div style={{ display: "flex", margin: "0", justifyContent: "center" }}>
           <h1>Subreddit Trend </h1>
           <h1 className="subreddit-name">r/{subreddit}</h1>
         </div>
