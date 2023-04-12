@@ -2,38 +2,28 @@ body {
   font-family: "Roboto", sans-serif;
   background-color: #1a1a1b;
   color: #d7dadc;
+  margin-top: 0;
 }
 
 form {
-  margin: 10px;
-  text-align: center;
+  margin-left: 10px;
 }
 
 h1 {
-  text-align: center;
-  margin: 10px;
+  margin: 10px 0 0 10px;
 }
-
 .container {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  width: 100%;
-  /* justify-content: center;
-  align-items: center; */
 }
 
 .post {
-  width: 50%;
-  margin: 10px;
-  /* border: 1px solid #3e4446;
-  border-radius: 5px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis; */
+  margin-bottom: 10px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  width: 60%;
 }
 
 .post-link {
@@ -41,27 +31,77 @@ h1 {
   color: #d7dadc;
   margin: 0px;
   font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.post-link span {
+  display: inline-block;
 }
 
 .post-link:before {
-  content: "🚀";
+  content: "";
   margin-right: 5px;
+}
+
+.post-link:hover {
+  color: #ffffff;
 }
 
 .post-details {
   display: flex;
   flex-direction: row;
-  font-size: 0.75rem;
+  font-size: 1rem;
   color: #888;
 }
 
-.post-details p {
-  margin: 0px 15px 0px 0px;
+.post-details span {
+  margin: 5px 30px 0px 0px;
   padding: 0px;
+  display: block;
 }
 
-.post-details p:first-child {
-  margin-left: 24px;
+.post-details span:first-child {
+  margin-left: 16px;
+}
+
+.post-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 10px 10px 0px 10px;
+}
+
+.post-header button {
+  border: none;
+  background-color: transparent;
+  color: #888;
+  font-size: 1rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.post-header button:hover {
+  color: #ffffff;
+}
+
+.categories button {
+  border: 1px solid #3e4446;
+  border-radius: 10px;
+  padding: 5px 10px;
+  background-color: transparent;
+  color: #d8d6d6;
+  cursor: pointer;
+  font-size: 1rem;
+  margin: 5px 5px 10px 5px;
+}
+
+.post-text {
+  margin: 20px 10px 0 30px;
+  font-size: 1.1rem;
+  color: #fff;
+  line-height: 1.5rem;
+  width: 100%;
 }
 
 #subreddit-search {
@@ -77,10 +117,11 @@ h1 {
   border: 1px solid #3e4446;
   background-color: #3e4446;
   color: #fff;
+  cursor: pointer;
 }
 
 .subreddit-name {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: bold;
   margin: 10px;
 }
