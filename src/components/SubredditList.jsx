@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import getSubreddit from "../utils/getSubreddit";
 import { Post } from "./Post";
 import "../App.css";
 
@@ -11,10 +11,9 @@ const SubredditList = ({ subreddit }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(
-          `http://localhost:3000/r/${subreddit}`
-        );
-        setData(response.data);
+        const response = await getSubreddit(subreddit);
+        setData(response);
+        setError(null); // reset error state when data is fetched successfully
       } catch (error) {
         setError(error);
       } finally {
@@ -25,12 +24,11 @@ const SubredditList = ({ subreddit }) => {
   }, [subreddit]);
 
   if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error.message}</div>;
-  if (!data.length) return <div>No results found.</div>;
+  if (error) return <div>Subreddit didn't found!</div>;
+  if (!data.length) return <div>No data found.</div>;
 
   return (
     <div className="container">
-      <p className="subreddit-name">r/{subreddit}</p>
       {data.map((item) => (
         <Post key={item.id} item={item} />
       ))}
