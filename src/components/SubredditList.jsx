@@ -20,12 +20,19 @@ const SubredditList = ({ subreddit }) => {
         setLoading(false);
       }
     };
-    fetchData();
+
+    if (subreddit) {
+      fetchData();
+    } else {
+      setData([]);
+    }
   }, [subreddit]);
 
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>Subreddit didn't found!</div>;
-  if (!data.length) return <div>No data found.</div>;
+  if (loading) return <div style={{ marginLeft: "15px" }}>Loading...</div>;
+  if (error)
+    return <div style={{ marginLeft: "15px" }}>Subreddit not found!</div>;
+  if (!data.length)
+    return <div style={{ marginLeft: "15px" }}>No data found.</div>;
 
   return (
     <div className="container">

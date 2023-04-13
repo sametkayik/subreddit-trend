@@ -1,17 +1,28 @@
 import "./App.css";
 import Home from "./components/Home";
 import FavoritesList from "./components/FavoritesList";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import { createBrowserRouter, RouterProvider, Router } from "react-router-dom";
 
 function App() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Home />,
+      element: (
+        <>
+          <Navbar />
+          <Home />
+        </>
+      ),
     },
     {
       path: "/favorites",
-      element: <FavoritesList />,
+      element: (
+        <>
+          <Navbar />
+          <FavoritesList />
+        </>
+      ),
     },
   ]);
   return (

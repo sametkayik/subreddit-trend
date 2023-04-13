@@ -37,16 +37,23 @@ export const Post = ({ item }) => {
         <a href={item.url} target="_blank" rel="noopener noreferrer">
           <h2 className="post-title">{item.title}</h2>
         </a>
-        <p className="post-author">
+
+        <div
+          className="post-author"
+          style={{
+            marginTop: "10px",
+          }}
+        >
+          {"r/" + item.subreddit} <br />
           Posted by <br />
           <a
             href={item.author_profile}
             target="_blank"
             rel="noopener noreferrer"
           >
-            {item.author}{" "}
+            {item.author}
           </a>
-        </p>
+        </div>
       </div>
       {item.text && !showText ? (
         <button className="show-text-button" onClick={handleClick}>

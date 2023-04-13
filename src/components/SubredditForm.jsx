@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 
 function SubredditForm(props) {
   const [subreddit, setSubreddit] = useState("");
@@ -25,8 +24,8 @@ function SubredditForm(props) {
           margin: "0 10px",
         }}
       >
-        <div>
-          <label>
+        <div className="search-form">
+          <label style={{ marginLeft: "5px" }}>
             Subreddit:{" "}
             <input
               id="subreddit-search"
@@ -40,17 +39,11 @@ function SubredditForm(props) {
             Search
           </button>
         </div>
-
-        <div>
-          <Link
-            to="/favorites"
-            style={{ textDecoration: "none", color: "#d7dadc" }}
-          >
-            <h2>Favorites</h2>
-          </Link>
-        </div>
       </form>
-      <div className="categories" style={{ margin: "0 10px" }}>
+      <div className="categories" style={{ margin: "10px 10px" }}>
+        <button onClick={() => props.onSubredditChange("all")}>
+          All Subreddits
+        </button>
         <button onClick={() => props.onSubredditChange("learnprogramming")}>
           LearnProgramming
         </button>
