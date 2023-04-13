@@ -152,11 +152,20 @@ form {
 video {
   width: 500px;
   height: 300px;
+  border-radius: 10px;
 }
 
 .content-image {
-  width: 500px;
+  width: 450px;
   height: 300px;
+  border-radius: 10px;
+}
+
+.thumbnail {
+  width: 140px;
+  height: 140px;
+  margin: 20px 5px 0 0;
+  border-radius: 10px;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -172,6 +181,16 @@ video {
   form input {
     margin: 0;
     font-size: 0.6rem;
+  }
+
+  .content-image {
+    width: 200px;
+    height: 200px;
+  }
+
+  .thumbnail {
+    width: 60px;
+    height: 80px;
   }
 
   video {

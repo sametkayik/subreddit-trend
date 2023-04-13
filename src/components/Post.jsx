@@ -47,12 +47,7 @@ export const Post = ({ item }) => {
         }}
       >
         {item.thumbnail && (
-          <img
-            className="thumbnail"
-            src={item.thumbnail}
-            alt=""
-            style={{ margin: "10px", width: "140px", height: "140px" }}
-          />
+          <img className="thumbnail" src={item.thumbnail} alt="" />
         )}
 
         <div
