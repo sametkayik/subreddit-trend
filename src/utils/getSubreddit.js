@@ -20,6 +20,7 @@ const getSubreddit = async (subreddit, limit = 10) => {
       text: post.data.selftext,
       posted_date: post.data.created_utc,
       subreddit: post.data.subreddit,
+      subreddit_url: baseUrl + "/r/" + post.data.subreddit,
     }));
     return simplifiedPosts;
   } catch (error) {

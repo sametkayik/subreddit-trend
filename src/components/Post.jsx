@@ -44,7 +44,14 @@ export const Post = ({ item }) => {
             marginTop: "10px",
           }}
         >
-          {"r/" + item.subreddit} <br />
+          <a
+            href={item.subreddit_url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {"r/" + item.subreddit}
+          </a>{" "}
+          <br />
           Posted by <br />
           <a
             href={item.author_profile}
