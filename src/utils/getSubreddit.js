@@ -21,6 +21,11 @@ const getSubreddit = async (subreddit, limit = 10) => {
       posted_date: post.data.created_utc,
       subreddit: post.data.subreddit,
       subreddit_url: baseUrl + "/r/" + post.data.subreddit,
+      image_url: post.data.url_overridden_by_dest,
+      thumbnail: post.data.thumbnail.includes("thumbs")
+        ? post.data.thumbnail
+        : null,
+      video: post.data.media?.reddit_video?.fallback_url,
     }));
     return simplifiedPosts;
   } catch (error) {

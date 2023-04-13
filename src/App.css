@@ -36,7 +36,7 @@ form {
 .show-text-button {
   background-color: transparent;
   color: #a5a5a5;
-  margin: 0 0 5px 0px;
+  margin: 20px 0 5px 0;
   display: flex;
 }
 
@@ -95,7 +95,7 @@ form {
 }
 
 .post-title {
-  margin: 0 0 0 10px;
+  margin: 20px 0 0 10px;
   font-size: 1.25rem;
   color: #ffffff;
   max-width: 50ch;
@@ -149,6 +149,16 @@ form {
   margin-right: 10px;
 }
 
+video {
+  width: 500px;
+  height: 300px;
+}
+
+.content-image {
+  width: 500px;
+  height: 300px;
+}
+
 @media only screen and (max-width: 1200px) {
   body {
     max-width: 90%;
@@ -162,6 +172,11 @@ form {
   form input {
     margin: 0;
     font-size: 0.6rem;
+  }
+
+  video {
+    width: 300px;
+    height: 200px;
   }
 
   /* Headings */
@@ -219,8 +234,19 @@ form {
 
 @media only screen and (max-width: 480px) {
   body {
-    max-width: 100%;
+    max-width: 95%;
     font-size: 0.75rem;
+    margin-right: 10px;
+  }
+
+  video {
+    width: 200px;
+    height: 150px;
+  }
+
+  .content-image {
+    width: 200px;
+    height: 150px;
   }
 
   .categories button {
@@ -241,7 +267,12 @@ form {
     margin-bottom: 10px;
   }
 
+  .thumbnail {
+    display: none;
+  }
+
   .post-title {
+    font-size: 0.75rem;
     max-width: 50ch;
   }
 
@@ -252,8 +283,18 @@ form {
     text-overflow: ellipsis;
     word-wrap: break-word;
   }
-
+  h1 {
+    font-size: 1.25rem;
+  }
   h2 {
     font-size: 1rem;
+  }
+
+  p i {
+    font-size: 0.75rem;
+  }
+
+  .post-favorite {
+    font-size: 0.75rem;
   }
 }

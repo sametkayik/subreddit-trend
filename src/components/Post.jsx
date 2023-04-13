@@ -1,8 +1,12 @@
 import React from "react";
 import "../App.css";
+import PostHeader from "./Post/PostHeader";
+import PostBody from "./Post/PostBody";
+import PostFooter from "./Post/PostFooter";
 
 export const Post = ({ item }) => {
   const [showText, setShowText] = React.useState(false);
+  const [showThumbnail, setShowThumbnail] = React.useState(true);
   const [isFavorited, setIsFavorited] = React.useState(
     localStorage.getItem("favorites")
       ? JSON.parse(localStorage.getItem("favorites")).some(
@@ -13,6 +17,7 @@ export const Post = ({ item }) => {
 
   const handleClick = () => {
     setShowText(!showText);
+    setShowThumbnail(!showThumbnail);
   };
 
   const handleFavoriteClick = () => {
@@ -33,66 +38,50 @@ export const Post = ({ item }) => {
 
   return (
     <div className="post-card">
-      <div className="post-header">
-        <a href={item.url} target="_blank" rel="noopener noreferrer">
-          <h2 className="post-title">{item.title}</h2>
-        </a>
+      <div
+        style={{
+          width: "100%",
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "start",
+        }}
+      >
+        {item.thumbnail && (
+          <img
+            className="thumbnail"
+            src={item.thumbnail}
+            alt=""
+            style={{ margin: "10px", width: "140px", height: "140px" }}
+          />
+        )}
 
         <div
-          className="post-author"
           style={{
-            marginTop: "10px",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+            width: "100%",
           }}
         >
-          <a
-            href={item.subreddit_url}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {"r/" + item.subreddit}
-          </a>{" "}
-          <br />
-          Posted by <br />
-          <a
-            href={item.author_profile}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {item.author}
-          </a>
-        </div>
-      </div>
-      {item.text && !showText ? (
-        <button className="show-text-button" onClick={handleClick}>
-          Show text
-        </button>
-      ) : (
-        item.text && (
-          <button className="show-text-button" onClick={handleClick}>
-            Hide text
-          </button>
-        )
-      )}
-      <div className="post-body">{showText && <p>{item.text}</p>}</div>
-      <div className="post-footer">
-        <div className="post-stats">
-          <p className="post-upvotes">
-            <i className="fas fa-arrow-up"></i> {item.ups} upvotes
-          </p>
-          <p className="post-comments">
-            <i className="fas fa-comment"></i> {item.num_comments} comments
-          </p>
-          <button
-            onClick={handleFavoriteClick}
-            style={{
-              background: "transparent",
-              border: "none",
-              color: "#d7dadc",
-              cursor: "pointer",
-            }}
-          >
-            {isFavorited ? "Remove from favorites" : "Add to favorites"}
-          </button>
+          <PostHeader item={item} />
+
+          {showText ? (
+            <button className="show-text-button" onClick={handleClick}>
+              Hide content
+            </button>
+          ) : (
+            <button className="show-text-button" onClick={handleClick}>
+              Show content
+            </button>
+          )}
+
+          <PostBody item={item} showText={showText} />
+
+          <PostFooter
+            item={item}
+            isFavorited={isFavorited}
+            handleFavoriteClick={handleFavoriteClick}
+          />
         </div>
       </div>
     </div>
