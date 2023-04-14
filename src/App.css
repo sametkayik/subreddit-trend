@@ -148,6 +148,7 @@ form {
   align-items: center;
   font-size: 16px;
   color: #a5a5a5;
+  margin-left: 10px;
 }
 
 .post-stats {
@@ -157,10 +158,6 @@ form {
 
 .post-stats p {
   margin: 0 10px 0 0;
-}
-
-.post-stats i {
-  margin-right: 10px;
 }
 
 video {
@@ -323,11 +320,9 @@ video {
     font-size: 1rem;
   }
 
-  p i {
-    font-size: 0.75rem;
-  }
-
+  .post-upvotes,
+  .post-comments,
   .post-favorite {
-    font-size: 0.75rem;
+    font-size: 0.6rem;
   }
 }

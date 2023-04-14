@@ -14,12 +14,14 @@ const PostBody = ({ item, showText }) => {
       {showText && <p>{item.text}</p>}
 
       {showText && item.image_url && !item.video && (
-        <img
-          className="content-image"
-          src={item.image_url}
-          alt=""
-          style={{ margin: "10px" }}
-        />
+        <a href={item.image_url} target="_blank" rel="noopener noreferrer">
+          <img
+            className="content-image"
+            src={item.image_url}
+            alt=""
+            style={{ margin: "10px" }}
+          />
+        </a>
       )}
 
       {showText && item.video && <video controls src={item.video} />}

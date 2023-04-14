@@ -4,12 +4,8 @@ const PostFooter = ({ item, isFavorited, handleFavoriteClick }) => {
   return (
     <div className="post-footer">
       <div className="post-stats">
-        <p className="post-upvotes">
-          <i className="fas fa-arrow-up"></i> {item.ups} upvotes
-        </p>
-        <p className="post-comments">
-          <i className="fas fa-comment"></i> {item.num_comments} comments
-        </p>
+        <p className="post-upvotes">{item.ups} upvotes</p>
+        <p className="post-comments">{item.num_comments} comments</p>
         <button
           className="post-favorite"
           onClick={handleFavoriteClick}
