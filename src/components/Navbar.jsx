@@ -9,6 +9,10 @@ const Navbar = () => {
         alignItems: "center",
       }}
     >
+      <img
+        src="https://avatars.githubusercontent.com/u/53970699?v=4"
+        className="app-logo"
+      />
       <h1 style={{ margin: "0 0 0 10px" }}>Subreddit Trend</h1>
 
       <Link

@@ -191,6 +191,11 @@ video {
   cursor: pointer;
 }
 
+.app-logo {
+  width: 50px;
+  height: 50px;
+}
+
 @media only screen and (max-width: 1200px) {
   body {
     max-width: 90%;
@@ -220,7 +225,14 @@ video {
     width: 300px;
     height: 200px;
   }
+  h1 {
+    font-size: 1.35rem;
+  }
 
+  .app-logo {
+    width: 40px;
+    height: 40px;
+  }
   /* Headings */
   h2,
   .subreddit-name {
@@ -292,8 +304,9 @@ video {
   }
 
   .categories button {
-    margin: 2px 2px;
+    margin: 1px;
     padding: 5px 5px;
+    font-size: 0.6rem;
   }
 
   #subreddit-search {
@@ -326,7 +339,7 @@ video {
     word-wrap: break-word;
   }
   h1 {
-    font-size: 1.25rem;
+    font-size: 1rem;
   }
   h2 {
     font-size: 1rem;
@@ -341,5 +354,10 @@ video {
   #limit {
     font-size: 0.75rem;
     padding: 4px;
+  }
+
+  .app-logo {
+    width: 30px;
+    height: 30px;
   }
 }
