@@ -28,9 +28,23 @@ form {
 .categories button {
   border: none;
   border-radius: 10px;
-  padding: 10px 10px;
+  padding: 7px 10px;
   cursor: pointer;
   font-size: 0.9rem;
+}
+
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 0 10px 0;
+}
+
+.category {
+  background-color: #1a1a1b;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 5px 3px;
 }
 
 .show-text-button {
