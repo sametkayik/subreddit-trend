@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 function SubredditForm(props) {
+  const [limit, setLimit] = useState(10);
   const [subreddit, setSubreddit] = useState("");
   const [subreddits, setSubreddits] = useState([
     "all",
@@ -23,12 +24,17 @@ function SubredditForm(props) {
     e.preventDefault();
     if (subreddit) {
       props.onSubredditChange(subreddit);
+      props.handleLimitChange(limit);
     }
     setSubreddit("");
   };
 
   const handleSubredditChange = (e) => {
     setSubreddit(e.target.value);
+  };
+
+  const handleLimitChange = (e) => {
+    setLimit(e.target.value);
   };
 
   const handleAddSubreddit = () => {
@@ -53,7 +59,7 @@ function SubredditForm(props) {
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
-          margin: "0 10px",
+          margin: "0 5px",
         }}
         onSubmit={handleSubmit}
       >
@@ -68,22 +74,34 @@ function SubredditForm(props) {
               onChange={handleSubredditChange}
             />
           </label>
+          <select name="limit" id="limit" onChange={handleLimitChange}>
+            <option value="10">10</option>
+            <option value="25">25</option>
+            <option value="50">50</option>
+          </select>
           <button id="subreddit-submit" type="submit">
             Search
           </button>
           <button
             onClick={handleAddSubreddit}
             id="subreddit-submit"
-            style={{ marginLeft: "10px" }}
+            style={{ marginLeft: "5px" }}
           >
             Add
           </button>
         </div>
       </form>
-      <div className="categories" style={{ margin: "10px 10px" }}>
+      <div className="categories" style={{ margin: "10px 5px" }}>
         {subreddits.map((sub, index) => (
           <div key={index} className="category">
-            <button onClick={() => props.onSubredditChange(sub)}>{sub}</button>
+            <button
+              onClick={() => {
+                props.onSubredditChange(sub);
+                props.handleLimitChange(limit);
+              }}
+            >
+              {sub}
+            </button>
             <button
               style={{
                 cursor: "pointer",

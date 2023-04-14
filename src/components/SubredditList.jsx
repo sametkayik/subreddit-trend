@@ -3,7 +3,7 @@ import getSubreddit from "../utils/getSubreddit";
 import { Post } from "./Post";
 import "../App.css";
 
-const SubredditList = ({ subreddit }) => {
+const SubredditList = ({ subreddit, limit }) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -11,7 +11,7 @@ const SubredditList = ({ subreddit }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await getSubreddit(subreddit);
+        const response = await getSubreddit(subreddit, limit);
         setData(response);
         setError(null); // reset error state when data is fetched successfully
       } catch (error) {

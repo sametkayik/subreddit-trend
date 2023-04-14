@@ -4,9 +4,15 @@ import SubredditList from "./SubredditList";
 
 function Home() {
   const [subreddit, setSubreddit] = useState("all");
+  const [limit, setLimit] = useState(10);
 
   const handleSubredditChange = (value) => {
     setSubreddit(value);
+  };
+
+  const handleLimitChange = (value) => {
+    setLimit(value);
+    console.log(limit);
   };
 
   return (
@@ -14,8 +20,9 @@ function Home() {
       <SubredditForm
         subreddit={subreddit}
         onSubredditChange={handleSubredditChange}
+        handleLimitChange={handleLimitChange}
       />
-      <SubredditList subreddit={subreddit} />
+      <SubredditList subreddit={subreddit} limit={limit} />
     </div>
   );
 }

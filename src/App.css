@@ -179,6 +179,18 @@ video {
   border-radius: 10px;
 }
 
+#limit {
+  background-color: #1a1a1b;
+  width: 60px;
+  padding: 8px 10px;
+  font-size: 0.75rem;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
 @media only screen and (max-width: 1200px) {
   body {
     max-width: 90%;
@@ -285,7 +297,7 @@ video {
   }
 
   #subreddit-search {
-    width: 100px;
+    width: 80px;
   }
 
   #subreddit-submit {
@@ -324,5 +336,10 @@ video {
   .post-comments,
   .post-favorite {
     font-size: 0.6rem;
+  }
+
+  #limit {
+    font-size: 0.75rem;
+    padding: 4px;
   }
 }
