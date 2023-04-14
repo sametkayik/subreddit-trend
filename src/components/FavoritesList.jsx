@@ -5,14 +5,19 @@ import "../App.css";
 export const FavoritesList = () => {
   const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 
-  const postsByDate = favorites.reduce((accumulator, current) => {
-    const date = new Date(current.posted_date * 1000).toLocaleDateString();
-    return { ...accumulator, [date]: [...(accumulator[date] || []), current] };
-  }, {});
+  const postsByDate = Object.entries(
+    favorites.reduce((accumulator, current) => {
+      const date = new Date(current.posted_date * 1000).toLocaleDateString();
+      return {
+        ...accumulator,
+        [date]: [...(accumulator[date] || []), current],
+      };
+    }, {})
+  ).sort((a, b) => new Date(b[0]) - new Date(a[0]));
 
   return (
     <div className="favorites">
-      {Object.entries(postsByDate).map(([date, posts]) => (
+      {postsByDate.map(([date, posts]) => (
         <div key={date}>
           <h1 style={{ marginLeft: "10px" }}>{date}</h1>
           {posts.map((post, index) => (
