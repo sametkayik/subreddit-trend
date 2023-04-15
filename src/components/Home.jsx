@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import SubredditForm from "./SubredditForm";
-import SubredditList from "./SubredditList";
+import Form from "./Form/Form";
+import Posts from "./Posts";
+import "../App.css";
 
 function Home() {
   const [subreddit, setSubreddit] = useState("all");
@@ -16,12 +17,12 @@ function Home() {
 
   return (
     <div>
-      <SubredditForm
+      <Form
         subreddit={subreddit}
         onSubredditChange={handleSubredditChange}
         handleLimitChange={handleLimitChange}
       />
-      <SubredditList subreddit={subreddit} limit={limit} />
+      <Posts subreddit={subreddit} limit={limit} />
     </div>
   );
 }

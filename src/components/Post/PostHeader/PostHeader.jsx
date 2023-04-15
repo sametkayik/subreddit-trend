@@ -1,4 +1,6 @@
 import React from "react";
+import "./PostHeader.css";
+import "../../../App.css";
 
 const PostHeader = ({ item }) => {
   return (

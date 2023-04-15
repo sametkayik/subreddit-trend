@@ -1,7 +1,7 @@
 import "./App.css";
 import Home from "./components/Home";
-import FavoritesList from "./components/FavoritesList";
-import Navbar from "./components/Navbar";
+import Favorites from "./components/Favorites";
+import Navbar from "./components/Navbar/Navbar";
 import { createBrowserRouter, RouterProvider, Router } from "react-router-dom";
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
       element: (
         <>
           <Navbar />
-          <FavoritesList />
+          <Favorites />
         </>
       ),
     },

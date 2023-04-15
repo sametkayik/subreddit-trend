@@ -1,11 +1,12 @@
 import React from "react";
-import "../App.css";
-import PostHeader from "./Post/PostHeader";
-import PostBody from "./Post/PostBody";
-import PostFooter from "./Post/PostFooter";
+import PostHeader from "../PostHeader/PostHeader";
+import PostBody from "../PostBody/PostBody";
+import PostFooter from "../PostFooter/PostFooter";
 import { BsArrowsAngleContract, BsArrowsAngleExpand } from "react-icons/bs";
+import "../../../App.css";
+import "./PostCard.css";
 
-export const Post = ({ item }) => {
+export const PostCard = ({ item }) => {
   const [showText, setShowText] = React.useState(false);
   const [showThumbnail, setShowThumbnail] = React.useState(true);
   const [isFavorited, setIsFavorited] = React.useState(
@@ -65,7 +66,7 @@ export const Post = ({ item }) => {
             <button className="show-text-button" onClick={handleClick}>
               <BsArrowsAngleContract
                 className="BsArrowsAngleContract"
-                size={30}
+                size={20}
               />
             </button>
           ) : (
@@ -78,7 +79,7 @@ export const Post = ({ item }) => {
               <button className="show-text-button" onClick={handleClick}>
                 <BsArrowsAngleExpand
                   className="BsArrowsAngleExpand"
-                  size={20}
+                  size={15}
                 />
               </button>
 

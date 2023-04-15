@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "../../App.css";
+import "./Navbar.css";
 
 const Navbar = () => {
   return (
@@ -7,13 +9,17 @@ const Navbar = () => {
       style={{
         display: "flex",
         alignItems: "center",
+        marginBottom: "10px",
       }}
     >
       <img
         src="https://avatars.githubusercontent.com/u/53970699?v=4"
         className="app-logo"
       />
-      <h1 style={{ margin: "0 0 0 10px" }}>Subreddit Trend</h1>
+
+      <Link to="/" style={{ color: "#fff", textDecoration: "none" }}>
+        <h1 style={{ margin: "0 0 0 10px" }}>Subreddit Trend</h1>
+      </Link>
 
       <Link
         to="/"
@@ -23,7 +29,7 @@ const Navbar = () => {
           margin: "0 0 0 20px",
         }}
       >
-        <h2>Home Page</h2>
+        <h2>/Home</h2>
       </Link>
       <Link
         to="/favorites"
@@ -33,7 +39,7 @@ const Navbar = () => {
           margin: "0 0 0 20px",
         }}
       >
-        <h2>Favorites</h2>
+        <h2>/Favorites</h2>
       </Link>
     </div>
   );

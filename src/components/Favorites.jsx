@@ -1,8 +1,8 @@
 import React from "react";
-import { Post } from "./Post";
+import { PostCard } from "./Post/PostCard/PostCard";
 import "../App.css";
 
-export const FavoritesList = () => {
+export const Favorites = () => {
   const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 
   const postsByDate = Object.entries(
@@ -21,7 +21,7 @@ export const FavoritesList = () => {
         <div key={date}>
           <h1 style={{ marginLeft: "10px" }}>{date}</h1>
           {posts.map((post, index) => (
-            <Post key={`${date}-${index}`} item={post} />
+            <PostCard key={`${date}-${index}`} item={post} />
           ))}
         </div>
       ))}
@@ -35,4 +35,4 @@ export const FavoritesList = () => {
   );
 };
 
-export default FavoritesList;
+export default Favorites;

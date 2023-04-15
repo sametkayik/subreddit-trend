@@ -1,0 +1,44 @@
+.post-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+}
+
+.post-title {
+  margin: 20px 10px 0 10px;
+  font-size: 1rem;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.post-title:hover {
+  color: #d3d3d3;
+}
+
+.post-link {
+  transition: ease-in-out 0.12s;
+  text-decoration: none;
+}
+
+.post-link:hover {
+  text-decoration: underline;
+}
+
+@media only screen and (max-width: 768px) {
+  .post-title {
+    font-size: 0.8rem;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .post-title {
+    font-size: 0.75rem;
+  }
+  .post-header {
+    height: auto;
+  }
+  .post-header h2 {
+    margin-top: 5px;
+  }
+}

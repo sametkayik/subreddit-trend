@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import getSubreddit from "../utils/getSubreddit";
-import { Post } from "./Post";
+import { PostCard } from "./Post/PostCard/PostCard";
 import "../App.css";
 
-const SubredditList = ({ subreddit, limit }) => {
+const Posts = ({ subreddit, limit }) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -37,10 +37,10 @@ const SubredditList = ({ subreddit, limit }) => {
   return (
     <div className="container">
       {data.map((item) => (
-        <Post key={item.id} item={item} />
+        <PostCard key={item.id} item={item} />
       ))}
     </div>
   );
 };
 
-export default SubredditList;
+export default Posts;

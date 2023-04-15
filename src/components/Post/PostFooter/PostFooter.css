@@ -1,0 +1,74 @@
+.post-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+  font-size: 0.85rem;
+  color: #a5a5a5;
+  margin-left: 10px;
+}
+
+.AiFillHeart {
+  height: 25px;
+}
+
+.post-stats {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+
+.post-stats p {
+  margin: 0 10px 0 0;
+}
+
+.post-author {
+  color: #a5a5a5;
+  text-align: right;
+  margin: 0 10px 0 0;
+}
+
+.post-author a {
+  color: #a5a5a5;
+  font-style: italic;
+  transition: ease-in-out 0.12s;
+  text-decoration: none;
+}
+
+.post-author a:hover {
+  color: #fff;
+  font-style: italic;
+  text-decoration: underline;
+}
+
+@media only screen and (max-width: 768) {
+  .post-stats,
+  .post-author {
+    font-size: 0.5rem;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .post-stats,
+  .post-author {
+    font-size: 0.65rem;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .AiOutlineArrowUp {
+    height: 15px;
+  }
+
+  .AiFillHeart {
+    height: 15px;
+  }
+
+  .post-stats {
+    font-size: 0.6rem;
+  }
+
+  .post-author {
+    font-size: 0.5rem;
+  }
+}

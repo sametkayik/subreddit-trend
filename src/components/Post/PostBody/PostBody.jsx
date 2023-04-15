@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-
+import "./PostBody.css";
+import "../../../App.css";
 const PostBody = ({ item, showText }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -46,13 +47,6 @@ const PostBody = ({ item, showText }) => {
             href={item.post_external_url}
             target="_blank"
             rel="noopener noreferrer"
-            style={{
-              textDecoration: "none",
-              color: "#fff",
-              fontStyle: "italic",
-              margin: "0 0 5px 15px",
-              alignSelf: "flex-start",
-            }}
           >
             {item.post_external_url}
           </a>
@@ -70,13 +64,7 @@ const PostBody = ({ item, showText }) => {
             }}
           >
             <button
-              style={{
-                cursor: "pointer",
-                background: "transparent",
-                border: "none",
-                color: "#fff",
-                fontSize: "2rem",
-              }}
+              className="gallery-button"
               onClick={() => setCurrentImageIndex(currentImageIndex - 1)}
               disabled={currentImageIndex + 1 === 1}
             >
@@ -97,13 +85,7 @@ const PostBody = ({ item, showText }) => {
             </a>
 
             <button
-              style={{
-                cursor: "pointer",
-                background: "transparent",
-                border: "none",
-                color: "#fff",
-                fontSize: "2rem",
-              }}
+              className="gallery-button"
               onClick={() => setCurrentImageIndex(currentImageIndex + 1)}
               disabled={currentImageIndex + 1 === item.gallery_urls.length}
             >

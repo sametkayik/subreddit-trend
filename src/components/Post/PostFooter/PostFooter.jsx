@@ -4,6 +4,8 @@ import {
   AiOutlineComment,
   AiOutlineArrowUp,
 } from "react-icons/ai";
+import "./PostFooter.css";
+import "../../../App.css";
 
 const PostFooter = ({ item, isFavorited, handleFavoriteClick }) => {
   return (

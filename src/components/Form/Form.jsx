@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import "./Form.css";
+import "../../App.css";
 
 function SubredditForm(props) {
   const [limit, setLimit] = useState(10);
@@ -8,9 +10,8 @@ function SubredditForm(props) {
     "learnprogramming",
     "cscareerquestions",
     "csMajors",
-    "reactjs",
-    "javascript",
-    "webdev",
+    "todayilearned",
+    "pizza",
   ]);
 
   useEffect(() => {
@@ -53,7 +54,7 @@ function SubredditForm(props) {
   };
 
   return (
-    <>
+    <div className="form-container">
       <form
         style={{
           display: "flex",
@@ -70,6 +71,7 @@ function SubredditForm(props) {
               id="subreddit-search"
               type="text"
               name="subreddit"
+              placeholder="subreddit name"
               value={subreddit}
               onChange={handleSubredditChange}
             />
@@ -117,7 +119,7 @@ function SubredditForm(props) {
           </div>
         ))}
       </div>
-    </>
+    </div>
   );
 }
 
