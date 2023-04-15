@@ -156,6 +156,7 @@ form {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 40px;
   font-size: 16px;
   color: #a5a5a5;
   margin-left: 10px;
@@ -271,6 +272,10 @@ video {
   .categories button {
     border-radius: 5px;
     font-size: 0.75rem;
+  }
+
+  .show-text-button {
+    margin: 10px 0 0 0;
   }
 
   .show-text-button {
@@ -394,5 +399,13 @@ video {
   .app-logo {
     width: 30px;
     height: 30px;
+  }
+  .post-header {
+    /* align left top */
+    height: auto;
+  }
+
+  .post-header h2 {
+    margin-top: 5px;
   }
 }
