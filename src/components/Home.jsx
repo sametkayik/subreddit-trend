@@ -12,7 +12,6 @@ function Home() {
 
   const handleLimitChange = (value) => {
     setLimit(value);
-    console.log(limit);
   };
 
   return (

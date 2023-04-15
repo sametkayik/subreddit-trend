@@ -79,12 +79,18 @@ const PostBody = ({ item, showText }) => {
               {"<"}
             </button>
 
-            <img
-              className="content-image"
-              src={item.gallery_urls[currentImageIndex]}
-              alt=""
-              style={{ margin: "10px" }}
-            />
+            <a
+              href={item.gallery_urls[currentImageIndex]}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                className="content-image"
+                src={item.gallery_urls[currentImageIndex]}
+                alt=""
+                style={{ margin: "10px" }}
+              />
+            </a>
 
             <button
               style={{
