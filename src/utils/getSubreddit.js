@@ -21,11 +21,17 @@ const getSubreddit = async (subreddit, limit = 10) => {
       posted_date: post.data.created_utc,
       subreddit: post.data.subreddit,
       subreddit_url: baseUrl + "/r/" + post.data.subreddit,
-      image_url: post.data.url_overridden_by_dest,
+      image_url: post.data.url.includes("redd.it") ? post.data.url : null,
       thumbnail: post.data.thumbnail.includes("thumbs")
         ? post.data.thumbnail
         : null,
       video: post.data.media?.reddit_video?.fallback_url,
+      post_external_url: !post.data.url.includes("redd.it")
+        ? post.data.url
+        : null,
+      gallery_urls: post.data.gallery_data?.items?.map(
+        (item) => `https://i.redd.it/${item.media_id}.jpg`
+      ),
     }));
     return simplifiedPosts;
   } catch (error) {
