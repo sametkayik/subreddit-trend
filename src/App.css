@@ -31,6 +31,7 @@ form {
   padding: 7px 10px;
   cursor: pointer;
   font-size: 0.9rem;
+  transition: ease-in-out 0.12s;
 }
 
 .categories {
@@ -50,7 +51,7 @@ form {
 .show-text-button {
   background-color: transparent;
   color: #a5a5a5;
-  margin: 20px 0 5px 0;
+  margin: 20px 0 5px 5px;
   display: flex;
 }
 
@@ -109,21 +110,30 @@ form {
 }
 
 .post-title {
-  margin: 20px 0 0 10px;
+  margin: 20px 10px 0 10px;
   font-size: 1.25rem;
   color: #ffffff;
-  max-width: 50ch;
-  word-wrap: break-word;
+  font-weight: bold;
 }
 
 .post-title:hover {
   color: #d3d3d3;
 }
 
+.post-link {
+  transition: ease-in-out 0.12s;
+  text-decoration: none;
+}
+
+.post-link:hover {
+  text-decoration: underline;
+}
+
 .post-author {
   font-size: 1rem;
   color: #a5a5a5;
   text-align: right;
+  margin: 0 10px 0 0;
 }
 
 .post-author a {
@@ -136,7 +146,7 @@ form {
   line-height: 1.5rem;
   padding: 0 0 10px 10px;
   margin: 0;
-  max-width: 80ch;
+
   overflow: hidden;
   text-overflow: ellipsis;
   word-wrap: break-word;
@@ -196,6 +206,19 @@ video {
   height: 50px;
 }
 
+.post-author a {
+  color: #a5a5a5;
+  font-style: italic;
+  transition: ease-in-out 0.12s;
+  text-decoration: none;
+}
+
+.post-author a:hover {
+  color: #fff;
+  font-style: italic;
+  text-decoration: underline;
+}
+
 @media only screen and (max-width: 1200px) {
   body {
     max-width: 90%;
@@ -225,6 +248,7 @@ video {
     width: 300px;
     height: 200px;
   }
+
   h1 {
     font-size: 1.35rem;
   }
@@ -233,6 +257,7 @@ video {
     width: 40px;
     height: 40px;
   }
+
   /* Headings */
   h2,
   .subreddit-name {
@@ -260,7 +285,6 @@ video {
 
   .post-title {
     font-size: 0.85rem;
-    max-width: 50ch;
   }
 
   .post-author {
@@ -269,7 +293,7 @@ video {
 
   .post-body p {
     font-size: 0.85rem;
-    max-width: 70ch;
+
     line-height: 1.1rem;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -327,28 +351,39 @@ video {
   }
 
   .post-title {
-    font-size: 0.75rem;
-    max-width: 50ch;
+    font-size: 0.85rem;
   }
 
   .post-body p {
     line-height: 1rem;
-    max-width: 50ch;
+    font-size: 0.8rem;
     overflow: hidden;
     text-overflow: ellipsis;
     word-wrap: break-word;
   }
+
   h1 {
     font-size: 1rem;
   }
+
   h2 {
     font-size: 1rem;
   }
 
-  .post-upvotes,
-  .post-comments,
-  .post-favorite {
-    font-size: 0.6rem;
+  .AiOutlineArrowUp {
+    height: 15px;
+  }
+
+  .AiFillHeart {
+    height: 20px;
+  }
+
+  .BsArrowsAngleContract {
+    height: 20px;
+  }
+
+  .BsArrowsAngleExpand {
+    height: 15px;
   }
 
   #limit {

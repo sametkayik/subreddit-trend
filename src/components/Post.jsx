@@ -3,6 +3,7 @@ import "../App.css";
 import PostHeader from "./Post/PostHeader";
 import PostBody from "./Post/PostBody";
 import PostFooter from "./Post/PostFooter";
+import { BsArrowsAngleContract, BsArrowsAngleExpand } from "react-icons/bs";
 
 export const Post = ({ item }) => {
   const [showText, setShowText] = React.useState(false);
@@ -62,11 +63,14 @@ export const Post = ({ item }) => {
 
           {showText ? (
             <button className="show-text-button" onClick={handleClick}>
-              Hide content
+              <BsArrowsAngleContract
+                className="BsArrowsAngleContract"
+                size={30}
+              />
             </button>
           ) : (
             <button className="show-text-button" onClick={handleClick}>
-              Show content
+              <BsArrowsAngleExpand className="BsArrowsAngleExpand" size={20} />
             </button>
           )}
 
