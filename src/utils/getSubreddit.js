@@ -32,6 +32,7 @@ const getSubreddit = async (subreddit, limit = 10) => {
       gallery_urls: post.data.gallery_data?.items?.map(
         (item) => `https://i.redd.it/${item.media_id}.jpg`
       ),
+      category: post.data.link_flair_text ? post.data.link_flair_text : null,
     }));
     return simplifiedPosts;
   } catch (error) {

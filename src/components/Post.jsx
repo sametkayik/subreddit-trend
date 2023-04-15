@@ -69,9 +69,33 @@ export const Post = ({ item }) => {
               />
             </button>
           ) : (
-            <button className="show-text-button" onClick={handleClick}>
-              <BsArrowsAngleExpand className="BsArrowsAngleExpand" size={20} />
-            </button>
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+              }}
+            >
+              <button className="show-text-button" onClick={handleClick}>
+                <BsArrowsAngleExpand
+                  className="BsArrowsAngleExpand"
+                  size={20}
+                />
+              </button>
+
+              {item.category && (
+                <span
+                  style={{
+                    background: "#6b6b6b",
+                    color: "#fff",
+                    padding: "3px 10px",
+                    borderRadius: "10px",
+                    marginTop: "15px",
+                  }}
+                >
+                  {item.category}
+                </span>
+              )}
+            </div>
           )}
 
           <PostBody item={item} showText={showText} />

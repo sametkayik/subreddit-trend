@@ -7,14 +7,17 @@ const PostBody = ({ item, showText }) => {
     <div
       className="post-body"
       style={{
-        justifyContent: "center",
-        alignItems: "center",
         display: "flex",
         flexDirection: "column",
-        marginBottom: "20px",
+        justifyContent: "center",
+        alignItems: "center",
       }}
     >
-      {showText && <p>{item.text}</p>}
+      {showText && !item.gallery_urls && item.text && (
+        <p style={{ margin: "0 10px 10px 0", alignSelf: "flex-start" }}>
+          {item.text}
+        </p>
+      )}
 
       {showText && item.image_url && !item.video && (
         <a href={item.image_url} target="_blank" rel="noopener noreferrer">
@@ -27,7 +30,13 @@ const PostBody = ({ item, showText }) => {
         </a>
       )}
 
-      {showText && item.video && <video controls src={item.video} />}
+      {showText && item.video && (
+        <video
+          style={{ marginBottom: "10px", alignSelf: "center" }}
+          controls
+          src={item.video}
+        />
+      )}
 
       {showText &&
         item.post_external_url &&
@@ -41,7 +50,8 @@ const PostBody = ({ item, showText }) => {
               textDecoration: "none",
               color: "#fff",
               fontStyle: "italic",
-              margin: "10px",
+              margin: "0 0 5px 15px",
+              alignSelf: "flex-start",
             }}
           >
             {item.post_external_url}
@@ -49,14 +59,8 @@ const PostBody = ({ item, showText }) => {
         )}
 
       {showText && item.gallery_urls && (
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
+        <>
+          {item.text && <p style={{ margin: "0 10px 10px 0" }}>{item.text}</p>}
           <div
             style={{
               display: "flex",
@@ -109,7 +113,7 @@ const PostBody = ({ item, showText }) => {
           <p>
             {currentImageIndex + 1} / {item.gallery_urls.length}
           </p>
-        </div>
+        </>
       )}
     </div>
   );
