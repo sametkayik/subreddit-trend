@@ -49,7 +49,14 @@ export const PostCard = ({ item }) => {
         }}
       >
         {item.thumbnail && (
-          <img className="thumbnail" src={item.thumbnail} alt="" />
+          <a
+            className="post-link"
+            href={item.url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img className="thumbnail" src={item.thumbnail} alt="" />
+          </a>
         )}
 
         <div
@@ -68,6 +75,7 @@ export const PostCard = ({ item }) => {
                 className="BsArrowsAngleContract"
                 size={20}
               />
+              <span style={{ marginLeft: "10px" }}>Hide content</span>
             </button>
           ) : (
             <div
@@ -81,6 +89,7 @@ export const PostCard = ({ item }) => {
                   className="BsArrowsAngleExpand"
                   size={15}
                 />
+                <span style={{ marginLeft: "10px" }}>Show content</span>
               </button>
 
               {item.category && (
