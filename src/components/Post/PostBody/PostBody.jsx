@@ -21,7 +21,12 @@ const PostBody = ({ item, showText }) => {
       )}
 
       {showText && item.image_url && !item.video && (
-        <a href={item.image_url} target="_blank" rel="noopener noreferrer">
+        <a
+          href={item.image_url}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ alignSelf: "center" }}
+        >
           <img
             className="content-image"
             src={item.image_url}

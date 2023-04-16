@@ -47,7 +47,7 @@ video {
   font-style: italic;
   margin: 0 0 5px 15px;
   align-self: flex-start;
-  max-width: 40ch;
+  max-width: 30ch;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;

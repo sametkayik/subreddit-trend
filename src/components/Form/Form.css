@@ -76,7 +76,7 @@
   }
 
   .categories button {
-    padding: 5px 5px;
+    padding: 5px;
     font-size: 0.6rem;
   }
 
@@ -84,10 +84,11 @@
     font-size: 0.6rem;
     padding: 8px;
     width: 50px;
+    height: 30px;
   }
 
   #subreddit-search {
-    width: 100px;
+    width: 90px;
     padding: 8px 3px;
   }
 
@@ -98,6 +99,6 @@
   }
 
   .search-form label {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
   }
 }
