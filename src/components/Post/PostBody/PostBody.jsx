@@ -49,6 +49,7 @@ const PostBody = ({ item, showText }) => {
         !item.text &&
         !item.gallery_urls && (
           <a
+            className="external-link"
             href={item.post_external_url}
             target="_blank"
             rel="noopener noreferrer"

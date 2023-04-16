@@ -41,7 +41,7 @@ video {
   font-size: 2rem;
 }
 
-.post-body a {
+.external-link {
   text-decoration: none;
   color: #fff;
   font-style: italic;
@@ -72,7 +72,7 @@ video {
     word-wrap: break-word;
   }
 
-  .post-body a {
+  .external-link {
     font-size: 0.8rem;
   }
 
@@ -100,7 +100,7 @@ video {
     word-wrap: break-word;
   }
 
-  .post-body a {
+  .external-link {
     font-size: 0.8rem;
   }
 }
@@ -124,7 +124,7 @@ video {
     word-wrap: break-word;
   }
 
-  .post-body a {
+  .external-link {
     font-size: 0.8rem;
   }
 }
