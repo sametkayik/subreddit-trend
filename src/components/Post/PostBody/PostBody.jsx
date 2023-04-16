@@ -25,14 +25,9 @@ const PostBody = ({ item, showText }) => {
           href={item.image_url}
           target="_blank"
           rel="noopener noreferrer"
-          style={{ alignSelf: "center" }}
+          className="image-url"
         >
-          <img
-            className="content-image"
-            src={item.image_url}
-            alt=""
-            style={{ margin: "10px" }}
-          />
+          <img className="content-image" src={item.image_url} alt="" />
         </a>
       )}
 
@@ -81,6 +76,7 @@ const PostBody = ({ item, showText }) => {
               href={item.gallery_urls[currentImageIndex]}
               target="_blank"
               rel="noopener noreferrer"
+              className="image-url"
             >
               <img
                 className="content-image"
