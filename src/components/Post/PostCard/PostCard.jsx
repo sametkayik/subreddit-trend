@@ -95,7 +95,7 @@ export const PostCard = ({ item }) => {
               {item.category && (
                 <span
                   style={{
-                    background: "#6b6b6b",
+                    background: "#575757",
                     color: "#fff",
                     padding: "3px 10px",
                     borderRadius: "10px",

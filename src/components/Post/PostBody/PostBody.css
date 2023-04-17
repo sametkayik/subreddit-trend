@@ -1,7 +1,6 @@
 .post-body p {
   font-size: 1.1rem;
   color: #ffffff;
-  line-height: 1.5rem;
   padding: 0 0 10px 10px;
   margin: 0;
 
@@ -12,7 +11,7 @@
 
 .show-text-button {
   background-color: transparent;
-  color: #a5a5a5;
+  color: #dbdbdb;
   margin: 20px 0 5px 5px;
   display: flex;
 }
@@ -70,7 +69,6 @@ video {
   }
 
   .post-body p {
-    line-height: 1rem;
     font-size: 1rem;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -89,7 +87,6 @@ video {
   }
 
   .post-body p {
-    line-height: 1rem;
     font-size: 0.8rem;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -116,7 +113,6 @@ video {
   }
 
   .post-body p {
-    line-height: 1rem;
     font-size: 0.8rem;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -140,7 +136,6 @@ video {
   }
 
   .post-body p {
-    line-height: 1rem;
     font-size: 0.8rem;
     overflow: hidden;
     text-overflow: ellipsis;

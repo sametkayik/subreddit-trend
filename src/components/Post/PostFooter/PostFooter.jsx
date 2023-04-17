@@ -58,7 +58,7 @@ const PostFooter = ({ item, isFavorited, handleFavoriteClick }) => {
           ) : (
             <AiFillHeart
               className="AiFillHeart"
-              style={{ color: "#747474" }}
+              style={{ color: "#dbdbdb" }}
               size={30}
             />
           )}

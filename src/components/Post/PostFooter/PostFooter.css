@@ -4,7 +4,7 @@
   align-items: center;
   height: 40px;
   font-size: 0.85rem;
-  color: #a5a5a5;
+  color: #dbdbdb;
   margin-left: 10px;
 }
 
@@ -29,7 +29,7 @@
 }
 
 .post-author a {
-  color: #a5a5a5;
+  color: #dbdbdb;
   font-style: italic;
   transition: ease-in-out 0.12s;
   text-decoration: none;
