@@ -5,7 +5,7 @@
 }
 
 .category {
-  background-color: #1a1a1b;
+  background-color: #334155;
   border: none;
   border-radius: 10px;
   cursor: pointer;
@@ -13,13 +13,13 @@
 }
 
 .categories button {
-  background-color: #1a1a1b;
+  background-color: #334155;
   color: #d8d6d6;
   margin: 5px 3px;
 }
 
 #subreddit-submit {
-  background-color: #1a1a1b;
+  background-color: #334155;
   color: #fff;
   padding: 10px 10px;
   font-size: 0.8rem;
@@ -28,15 +28,15 @@
 #subreddit-search {
   margin: 2px 5px;
   border-radius: 5px;
-  border: 1px solid #1a1a1b;
+  border: none;
   padding: 8px 5px;
   font-size: 0.75rem;
-  background-color: #1a1a1b;
+  background-color: #334155;
   color: #fff;
 }
 
 #limit {
-  background-color: #1a1a1b;
+  background-color: #334155;
   width: 60px;
   padding: 8px 10px;
   font-size: 0.75rem;
