@@ -1,6 +1,7 @@
 import React from "react";
 import { PostCard } from "./Post/PostCard/PostCard";
 import "../App.css";
+import { AiFillHeart } from "react-icons/ai";
 
 export const Favorites = () => {
   const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
@@ -27,8 +28,9 @@ export const Favorites = () => {
       ))}
       {favorites.length === 0 && (
         <p style={{ margin: "10px 0 10px 15px" }}>
-          You have no favorites. Click the "Add to favorites" on a post to add
-          it to your favorites.
+          You have no favorites. Click the heart icon {"("}
+          <AiFillHeart />
+          {")"} on a post to add it to your favorites.
         </p>
       )}
     </div>

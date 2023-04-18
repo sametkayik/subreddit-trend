@@ -15,7 +15,13 @@ const PostBody = ({ item, showText }) => {
       }}
     >
       {showText && !item.gallery_urls && item.text && (
-        <p style={{ margin: "0 10px 10px 0", alignSelf: "flex-start" }}>
+        <p
+          style={{
+            margin: "0 10px 10px 0",
+            alignSelf: "flex-start",
+            whiteSpace: "pre-wrap",
+          }}
+        >
           {item.text}
         </p>
       )}
