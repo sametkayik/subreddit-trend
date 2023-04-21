@@ -10,8 +10,8 @@ body {
 
 button {
   border: none;
-  border-radius: 10px;
-  padding: 7px 10px;
+  border-radius: 4px;
+  padding: 8px;
   cursor: pointer;
   font-size: 0.9rem;
   transition: ease-in-out 0.12s;
@@ -26,5 +26,11 @@ button {
 @media only screen and (max-width: 768px) {
   body {
     max-width: 90%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  body {
+    max-width: 96%;
   }
 }

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import getSubreddit from "../utils/getSubreddit";
 import { PostCard } from "./Post/PostCard/PostCard";
 import "../App.css";
+import "./Posts.css";
 
 const Posts = ({ subreddit, limit }) => {
   const [data, setData] = useState([]);
@@ -28,14 +29,12 @@ const Posts = ({ subreddit, limit }) => {
     }
   }, [subreddit]);
 
-  if (loading) return <div style={{ marginLeft: "15px" }}>Loading...</div>;
-  if (error)
-    return <div style={{ marginLeft: "15px" }}>Subreddit not found!</div>;
-  if (!data.length)
-    return <div style={{ marginLeft: "15px" }}>No data found.</div>;
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Subreddit not found!</div>;
+  if (!data.length) return <div>No data found.</div>;
 
   return (
-    <div className="container">
+    <div className="post-container">
       {data.map((item) => (
         <PostCard key={item.id} item={item} />
       ))}

@@ -1,8 +1,7 @@
 .post-body p {
   font-size: 1.1rem;
   color: #ffffff;
-  padding: 0 0 10px 10px;
-  margin: 0;
+  margin: 8px;
   align-self: center;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -13,8 +12,8 @@
 .show-text-button {
   background-color: transparent;
   color: #dbdbdb;
-  margin: 20px 0 5px 5px;
   display: flex;
+  padding: 0 8px;
 }
 
 .show-text-button:hover {
@@ -24,20 +23,13 @@
 video {
   width: 500px;
   height: 300px;
-  border-radius: 10px;
+  border-radius: 4px;
 }
 
 .content-image {
-  border-radius: 10px;
-  max-width: 100%;
-}
-
-.image-url {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 0 20px 0;
-  max-width: 70%;
+  padding: 8px;
+  border-radius: 4px;
+  max-width: 90%;
 }
 
 .gallery-button {
@@ -52,7 +44,7 @@ video {
   text-decoration: none;
   color: #fff;
   font-style: italic;
-  margin: 0 0 5px 15px;
+  padding: 16px 8px;
   align-self: flex-start;
   max-width: 30ch;
   overflow: hidden;

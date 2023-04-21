@@ -31,7 +31,7 @@ const PostBody = ({ item, showText }) => {
 
       {showText && item.video && (
         <video
-          style={{ marginBottom: "10px", alignSelf: "center" }}
+          style={{ marginBottom: "8px", alignSelf: "center" }}
           controls
           src={item.video}
         />
@@ -80,7 +80,6 @@ const PostBody = ({ item, showText }) => {
                 className="content-image"
                 src={item.gallery_urls[currentImageIndex]}
                 alt=""
-                style={{ margin: "10px" }}
               />
             </a>
 

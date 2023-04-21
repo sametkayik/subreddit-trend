@@ -1,11 +1,14 @@
 .post-footer {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   height: 40px;
   font-size: 0.85rem;
   color: #dbdbdb;
-  margin-left: 10px;
+}
+
+.post-footer p {
+  margin: 0;
 }
 
 .AiFillHeart {
@@ -16,16 +19,19 @@
   display: flex;
   align-items: center;
   font-weight: bold;
+  padding: 0 4px;
 }
 
-.post-stats p {
-  margin: 0 10px 0 0;
+.post-stats {
+  gap: 8px;
 }
 
 .post-author {
   color: #a5a5a5;
   text-align: right;
-  margin: 0 10px 0 0;
+  display: flex;
+  flex-direction: column;
+  padding: 0 8px;
 }
 
 .post-author a {

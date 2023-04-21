@@ -44,8 +44,7 @@ export const PostCard = ({ item }) => {
         style={{
           width: "100%",
           display: "flex",
-          flexDirection: "row",
-          justifyContent: "start",
+          gap: "8px",
         }}
       >
         {item.thumbnail && (
@@ -65,6 +64,7 @@ export const PostCard = ({ item }) => {
             flexDirection: "column",
             justifyContent: "space-between",
             width: "100%",
+            gap: "4px",
           }}
         >
           <PostHeader item={item} />
@@ -75,21 +75,26 @@ export const PostCard = ({ item }) => {
                 className="BsArrowsAngleContract"
                 size={20}
               />
-              <span style={{ marginLeft: "10px" }}>Hide content</span>
+              <span style={{ marginLeft: "8px" }}>Hide content</span>
             </button>
           ) : (
             <div
               style={{
                 display: "flex",
                 alignItems: "center",
+                gap: "8px",
               }}
             >
-              <button className="show-text-button" onClick={handleClick}>
+              <button
+                className="show-text-button"
+                onClick={handleClick}
+                style={{ gap: "8px" }}
+              >
                 <BsArrowsAngleExpand
                   className="BsArrowsAngleExpand"
                   size={15}
                 />
-                <span style={{ marginLeft: "10px" }}>Show content</span>
+                <span>Show content</span>
               </button>
 
               {item.category && (
@@ -97,9 +102,8 @@ export const PostCard = ({ item }) => {
                   style={{
                     background: "#575757",
                     color: "#fff",
-                    padding: "3px 10px",
-                    borderRadius: "10px",
-                    marginTop: "15px",
+                    padding: "4px 8px",
+                    borderRadius: "4px",
                   }}
                 >
                   {item.category}

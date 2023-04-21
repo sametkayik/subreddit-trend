@@ -6,10 +6,12 @@ import "./Navbar.css";
 const Navbar = () => {
   return (
     <div
+      className="navbar"
       style={{
         display: "flex",
         alignItems: "center",
-        marginBottom: "10px",
+        flexDirection: "row",
+        gap: "12px",
       }}
     >
       <img
@@ -17,8 +19,14 @@ const Navbar = () => {
         className="app-logo"
       />
 
-      <Link to="/" style={{ color: "#fff", textDecoration: "none" }}>
-        <h1 style={{ margin: "0 0 0 10px" }}>Subreddit Trend</h1>
+      <Link
+        to="/"
+        style={{
+          color: "#fff",
+          textDecoration: "none",
+        }}
+      >
+        <h1>Subreddit Trend</h1>
       </Link>
 
       <Link
@@ -26,7 +34,6 @@ const Navbar = () => {
         style={{
           textDecoration: "none",
           color: "#d7dadc",
-          margin: "0 0 0 20px",
         }}
       >
         <h2>/Home</h2>
@@ -36,7 +43,6 @@ const Navbar = () => {
         style={{
           textDecoration: "none",
           color: "#d7dadc",
-          margin: "0 0 0 20px",
         }}
       >
         <h2>/Favorites</h2>

@@ -18,12 +18,7 @@ const PostFooter = ({ item, isFavorited, handleFavoriteClick }) => {
             alignItems: "center",
           }}
         >
-          <AiOutlineArrowUp
-            className="AiOutlineArrowUp"
-            size={20}
-            style={{ marginRight: "4px" }}
-          />{" "}
-          {item.ups}
+          <AiOutlineArrowUp className="AiOutlineArrowUp" size={20} /> {item.ups}
         </p>
         <p
           className="post-comments"
@@ -47,6 +42,7 @@ const PostFooter = ({ item, isFavorited, handleFavoriteClick }) => {
             border: "none",
             color: "#d7dadc",
             cursor: "pointer",
+            padding: "0",
           }}
         >
           {isFavorited ? (
@@ -64,15 +60,7 @@ const PostFooter = ({ item, isFavorited, handleFavoriteClick }) => {
           )}
         </button>
       </div>
-      <div
-        className="post-author"
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "flex-end",
-          marginBottom: "10px",
-        }}
-      >
+      <div className="post-author">
         <div>
           <a
             href={item.subreddit_url}
@@ -81,7 +69,7 @@ const PostFooter = ({ item, isFavorited, handleFavoriteClick }) => {
           >
             {"r/" + item.subreddit}
           </a>
-          <hr />
+          <hr style={{ margin: "2px" }} />
         </div>
         <a href={item.author_profile} target="_blank" rel="noopener noreferrer">
           u/{item.author}

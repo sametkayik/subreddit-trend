@@ -55,17 +55,9 @@ function SubredditForm(props) {
 
   return (
     <div className="form-container">
-      <form
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          margin: "0 5px",
-        }}
-        onSubmit={handleSubmit}
-      >
+      <form onSubmit={handleSubmit}>
         <div className="search-form">
-          <label style={{ marginLeft: "5px" }}>
+          <label>
             Subreddit:{" "}
             <input
               id="subreddit-search"
@@ -84,16 +76,12 @@ function SubredditForm(props) {
           <button id="subreddit-submit" type="submit">
             Search
           </button>
-          <button
-            onClick={handleAddSubreddit}
-            id="subreddit-submit"
-            style={{ marginLeft: "5px" }}
-          >
+          <button onClick={handleAddSubreddit} id="subreddit-submit">
             Add
           </button>
         </div>
       </form>
-      <div className="categories" style={{ margin: "10px 5px" }}>
+      <div className="categories">
         {subreddits.map((sub, index) => (
           <div key={index} className="category">
             <button
@@ -104,18 +92,7 @@ function SubredditForm(props) {
             >
               {sub}
             </button>
-            <button
-              style={{
-                cursor: "pointer",
-                backgroundColor: "#2e2e30",
-                opacity: 0.5,
-                color: "white",
-                borderRadius: "10px",
-              }}
-              onClick={() => handleRemoveSubreddit(index)}
-            >
-              X
-            </button>
+            <button onClick={() => handleRemoveSubreddit(index)}>X</button>
           </div>
         ))}
       </div>
